@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timesheet Calculator by Suraj</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="m-3">Time Sheet Calculator</h1>
+        <div class="container-fluid bg-light p-3">
+            <div class="header text-light container-fluid">
+                <ul class="nav bg-primary row p-3">
+                    <li class="nav-item col">
+                      Day
+                    </li>
+                    <li class="nav-item col">
+                      Starting Time
+                    </li>
+                    <li class="nav-item col">
+                      Ending time
+                    </li>
+                    <li class="nav-item col">
+                      Break Deduction
+                    </li>
+                    <li class="nav-item col col-md-auto">
+                        Total
+                      </li>
+                  </ul>
+            </div>
+            <div class="time_inputs d-flex justify-content-center">
+                <ul class="p3 container-fluid">
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Monday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="05" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="02" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total0">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Tuesday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="06" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="04" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total1">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Wednesday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="07" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="05" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total2">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Thursday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="08" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="01" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total3">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Friday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="09" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="02" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total4">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1">Saturday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="10" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="03" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total5">0.00</span>
+                        </div>
+                    </li>
+
+                    <li class="row p-1">
+                        <div class="day col" >
+                            <span class="m-1 m-auto">Sunday</span>
+                        </div>
+                        <div class="input_start col d-flex">
+                            <input type="number" max="11" min="0" value="08" class="inp hour hour-start m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-start m-1">
+                            <select class="form-select start-meri m-1">
+                                <option value='am' selected>AM</option>
+                                <option value='pm'>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_end col d-flex ">
+                            <input type="number" max="12" min="1" value="12" class="inp hour hour-end m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-end m-1">
+                            <select class="form-select end-meri m-1">
+                                <option value='am'>AM</option>
+                                <option value='pm' selected>PM</option>
+                            </select>
+                        </div>
+                        <div class="input_break col d-flex">
+                            <input type="number" max="12" min="1" value="04" class="inp hour hour-break m-1">
+                            <span class="m-1 fw-bold fs-4">:</span>
+                            <input type="number" max="59" min="0" value="00" class="inp min min-break m-1">
+                        </div>
+                        <div class="day col col-md-auto d-flex">
+                            <span class="total fs-4" id="total6">0.00</span>
+                        </div>
+                    </li>
+
+                  </ul>
+            </div>
+            <div class="d-flex justify-content-between ">
+                <div class="btns">
+                    <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+                    <button type="button" class="btn btn-warning" id="clear">Clear All</button>
+                </div>
+                <div class="total_hours">
+                    Total hours : <span class="fw-bold" id="total_hours">0</span>
+                </div>
+
+            </div>
+    
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
